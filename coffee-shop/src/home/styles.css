@@ -288,6 +288,7 @@ table {
   background: #E1D4C9;
   color: #403F3D;
   padding: 1.25rem 4.875rem; /* 20px 78px */
+  cursor: pointer;
 }
 
 .hero__btn:hover {
@@ -357,7 +358,15 @@ table {
   background-color: transparent;
   outline: none;
   border: none;
+  cursor: pointer;
 }
+
+.fav-coffee__sliter-btn:hover svg rect,
+.fav-coffee__sliter-btn:hover svg path {
+    stroke: #fff; 
+}
+
+/* to make a hover for svg!!! */
 
 .fav-coffee__slide-item {
   display: flex;
@@ -530,6 +539,10 @@ span {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+.mobile-app__link:hover {
+  cursor: pointer;
 }
 
 /* .mobile-app__link {
