@@ -1,0 +1,132 @@
+/* HIDDEN MENU START */
+.menu {
+    display: flex;
+    max-width: 90rem; /* 1440px */
+    width: 100%;
+    height: auto;
+    background-color: #E1D4C9;
+    padding: 1.25rem 0.625rem; /* 20px 10px */
+    margin: 0 auto;
+}
+
+.menu__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem; /* 20px */
+    margin: 0 auto;
+}
+
+.menu__title {
+    width: 50rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 125%;
+    text-align: center;
+    color: #403F3D;
+}
+
+.menu__categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2.5rem; /* 40px */
+}
+
+.fav-coffee__pagination-line--active {
+    height: 0.1875rem; /* 3px */
+    background-color: black;
+}
+
+.categories__group {
+    display: flex;
+    gap: 1.25rem; /* 20px */
+    border: 1px solid black;
+    border-radius: 3.125rem; /* 50px */
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+}
+
+.menu__drinks,
+.menu__desserts {
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem; /* 50px */
+}
+
+.drinks__line,
+.desserts__line,
+.menu__tea {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem; /* 20px */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem; /* 10px */
+    border: 1px solid #C1B6AD;
+    border-radius: 2.5rem; /* 40px */
+    padding-bottom: 1.875rem; /* 30px */
+    width: 19.375rem; /* 310px */
+    height: 31.625rem; /* 506px */
+}
+
+.item__img {
+    border-radius: 2.5rem; /* 40px */
+    width: 19.375rem; /* 310px */
+    height: 31.625rem; /* 506px */
+}
+
+.item__title,
+.item__descr,
+.item__price {
+    padding-left: 1.25rem; /* 20px */
+}
+
+.item__price {
+    color: #403F3D;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.active {
+    background-color: #665F55;
+    border: 1px solid #665F55;
+    color: #E1D4C9;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu__refresh {
+    display: none;
+}
+
+.menu__refresh-img {
+    display: flex;
+    align-items: center;
+    border: 1px solid #665F55;
+    border-radius: 50%;
+    width: 3.75rem; /* 60px */
+    height: 3.75rem; /* 60px */
+    object-fit: cover;
+    justify-content: center;
+    padding: 0.9375rem 0.9375rem; /* 15px 15px */
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+@media (min-width: 23.8125rem) and (max-width: 48rem) { /* 381px and 768px */
+    .menu__refresh {
+        display: flex;
+    }
+}
