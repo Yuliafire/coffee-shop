@@ -347,10 +347,16 @@ table {
   color: #B0907A;
 }
 
-.fav-coffee__arrow {
+/* .fav-coffee__arrow {
   border: 1px solid rgba(102, 95, 85, 1);
   border-radius: 50%;
   padding: 20px;
+} */
+
+.fav-coffee__sliter-btn {
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 .fav-coffee__slide-item {

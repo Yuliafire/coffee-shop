@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 .header {
   max-width: 90rem; /* 1440px / 16 */
   width: 100%;
@@ -30,6 +33,12 @@
   gap: 5rem; /* 80px / 16 */
   font-size: 1.4em;
   word-wrap: none;
+
+}
+
+.nav__item {
+  width: 117px;
+  height: 24px;
 }
 
 .nav__item:hover {
@@ -39,6 +48,11 @@
 
 .nav__link {
   text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
   color: #403F3D;
 }
 
