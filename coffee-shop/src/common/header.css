@@ -177,7 +177,6 @@
         transform: translateY(4px);
         transition: transform 0.3s ease;
        }
-      
        .burger-btn .line:nth-child(2) {
           transform: translateY(-4px);
           transition: transform 0.3s ease;
