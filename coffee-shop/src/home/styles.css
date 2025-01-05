@@ -63,6 +63,12 @@ body {
   line-height: 1;
 }
 
+.body-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
 ol,
 ul {
   list-style: none;
