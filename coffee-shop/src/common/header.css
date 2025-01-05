@@ -25,7 +25,7 @@
   align-items: center;
 } */
 
-.nav__menu {
+.menu__list {
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -35,12 +35,12 @@
   word-wrap: none;
 }
 
-.nav__item:hover {
+.menu__item:hover {
   font-weight: bold;
   cursor: pointer;
 }
 
-.nav__link {
+.menu__link {
   text-decoration: none;
   font-style: normal;
   font-weight: 600;
@@ -48,11 +48,12 @@
   line-height: 150%;
   /* identical to box height, or 24px */
   color: #403F3D;
+  scroll-behavior: smooth;
 }
 
 /* add hover for nav links  */
 
-.header__menu {
+.header__menu-link {
   display: flex;
   align-items: center;
   gap: 0.625rem; /* 10px / 16 */
@@ -60,21 +61,111 @@
   color: #403F3D;
 }
 
-.header__menu:hover {
+.header__menu-link:hover {
   text-decoration: underline;
 }
 
 /* BURGER MENU STYLES */
 .burger-btn {
   display: none;
-  position: absolute;
+  position: relative;
   background-color: transparent;
-  width: 3.125rem; /* 50px / 16 */
-  height: 3.125rem; /* 50px / 16 */
-  right: 0.625rem; /* 10px / 16 */
+  width: 40px;
+  height: 40px;
+  right: 0px; /* 10px / 16 */
   top: -0.625rem; /* -10px / 16 */
   outline: none;
   border: none;
   cursor: pointer;
 }
 /* BURGER MENU STYLES */
+
+.burger-btn .line {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  left: 5px;
+}
+
+.burger-btn .line:nth-child(1) {
+  transform: translateY(4px);
+  transition: transform 0.3s ease;
+ }
+
+ .burger-btn .line:nth-child(2) {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease;
+ }
+
+  /* make a cross */
+
+  .header.open .burger-btn .line:nth-child(1) {
+     transform: translateY(0) rotate(45deg);
+  }
+
+  .header.open .burger-btn .line:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+
+  .burger-btn {
+    display: block;
+  }
+
+  .header__menu {
+    position: fixed;
+    visibility: hidden;
+    right: -100%;
+    top: 4rem;
+    z-index: 2000;
+    max-width: 900px;
+    width: 100%;
+    background-color: #E1D4C9;
+    border: 1px solid #E1D4C9;
+    height: calc(100vh - 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease, visibility 0.5s ease;
+  }
+
+
+
+  .header.open .header__menu {
+    display: flex;
+    visibility: visible;
+    transform: translateX(-100%);
+
+  }
+
+  .menu__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+  }
+
+  menu__link {
+
+  }
+
+  body.menu-open {
+    overflow: hidden;
+    /* Отключает прокрутку страницы */
+}
+
+
+
+
+
+  .header__menu-link {
+        display: none;
+      }
+
+}
