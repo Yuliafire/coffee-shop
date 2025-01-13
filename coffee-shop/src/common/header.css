@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 .header {
   max-width: 90rem; /* 1440px / 16 */
   width: 100%;
-  background-color: #E1D4C9;
+  background-color: #e1d4c9;
   height: 6.25rem; /* 100px / 16 */
   display: flex;
   padding: 2.5rem; /* 40px / 16 */
@@ -47,7 +46,7 @@
   font-size: 1rem;
   line-height: 150%;
   /* identical to box height, or 24px */
-  color: #403F3D;
+  color: #403f3d;
   scroll-behavior: smooth;
 }
 
@@ -58,7 +57,7 @@
   align-items: center;
   gap: 0.625rem; /* 10px / 16 */
   text-decoration: none;
-  color: #403F3D;
+  color: #403f3d;
 }
 
 .header__menu-link:hover {
@@ -94,29 +93,31 @@
 .burger-btn .line:nth-child(1) {
   transform: translateY(4px);
   transition: transform 0.3s ease;
- }
+}
 
- .burger-btn .line:nth-child(2) {
-    transform: translateY(-4px);
-    transition: transform 0.3s ease;
- }
+.burger-btn .line:nth-child(2) {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
 
-  /* make a cross */
-  .header.open .burger-btn .line:nth-child(1) {
-     transform: translateY(0) rotate(45deg);
-  }
+/* make a cross */
+.header.open .burger-btn .line:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
 
-  .header.open .burger-btn .line:nth-child(2) {
-    transform: translateY(0) rotate(-45deg);
-  }
-
-
+.header.open .burger-btn .line:nth-child(2) {
+  transform: translateY(0) rotate(-45deg);
+}
 
 @media (min-width: 769px) and (max-width: 900px) {
   .header {
     max-width: 56.25rem;
     width: 100%;
     margin: 0 auto;
+  }
+
+  .header__container {
+    align-items: center;
   }
 
   .burger-btn {
@@ -131,8 +132,8 @@
     z-index: 2000;
     max-width: 56.25rem;
     width: 100%;
-    background-color: #E1D4C9;
-    border: 1px solid #E1D4C9;
+    background-color: #e1d4c9;
+    border: 1px solid #e1d4c9;
     height: calc(100vh - 4rem);
     display: flex;
     justify-content: center;
@@ -144,7 +145,6 @@
     display: flex;
     visibility: visible;
     transform: translateX(-100%);
-
   }
 
   .menu__list {
@@ -155,45 +155,39 @@
     margin: 0 auto;
   }
 
-  .menu__link  {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 1.5rem;
-      line-height: 125%;
-      color: #403F3D;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-      /* Отключает прокрутку страницы */
-  }
-  
-  
-    .header__menu-link {
-          display: none;
-        }
-  
-        .burger-btn .line:nth-child(1) {
-          transform: translateY(4px);
-          transition: transform 0.3s ease;
-         }
-         .burger-btn .line:nth-child(2) {
-            transform: translateY(-4px);
-            transition: transform 0.3s ease;
-         }
+  .menu__link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 125%;
+    color: #403f3d;
   }
 
+  body.menu-open {
+    overflow: hidden;
+    /* Отключает прокрутку страницы */
+  }
 
+  .header__menu-link {
+    display: none;
+  }
+
+  .burger-btn .line:nth-child(1) {
+    transform: translateY(4px);
+    transition: transform 0.3s ease;
+  }
+  .burger-btn .line:nth-child(2) {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease;
+  }
+}
 
 @media (min-width: 381px) and (max-width: 768px) {
-
   .header {
     max-width: 48rem;
-    /* 768px */
     width: 100%;
     margin: 0 auto;
-    /* padding: 0px 8px; */
-}
+  }
 
   .header__container {
     align-items: center;
@@ -211,8 +205,8 @@
     z-index: 2000;
     max-width: 48rem;
     width: 100%;
-    background-color: #E1D4C9;
-    border: 1px solid #E1D4C9;
+    background-color: #e1d4c9;
+    border: 1px solid #e1d4c9;
     height: calc(100vh - 4rem);
     display: flex;
     justify-content: center;
@@ -224,7 +218,6 @@
     display: flex;
     visibility: visible;
     transform: translateX(-100%);
-
   }
 
   .menu__list {
@@ -235,37 +228,35 @@
     margin: 0 auto;
   }
 
-  .menu__link  {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 1.5rem;
-      line-height: 125%;
-      color: #403F3D;
-    }
+  .menu__link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 125%;
+    color: #403f3d;
+  }
 
   body.menu-open {
     overflow: hidden;
     /* Отключает прокрутку страницы */
-}
+  }
 
   .header__menu-link {
-        display: none;
-      }
+    display: none;
+  }
 
-      .burger-btn .line:nth-child(1) {
-        transform: translateY(4px);
-        transition: transform 0.3s ease;
-       }
-      
-       .burger-btn .line:nth-child(2) {
-          transform: translateY(-4px);
-          transition: transform 0.3s ease;
-       }
+  .burger-btn .line:nth-child(1) {
+    transform: translateY(4px);
+    transition: transform 0.3s ease;
+  }
 
-      }
+  .burger-btn .line:nth-child(2) {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease;
+  }
+}
 
-@media (max-width: 380px)  {
-
+@media (max-width: 380px) {
   .header {
     max-width: 23.75rem;
     /* 380px */
@@ -273,11 +264,11 @@
     height: 64px;
     margin: 0 auto;
     /* padding: 0px 8px; */
-}
+  }
 
-.header__container {
-  align-items: center;
-}
+  .header__container {
+    align-items: center;
+  }
 
   .burger-btn {
     display: block;
@@ -291,8 +282,8 @@
     z-index: 2000;
     max-width: 23.75rem;
     width: 100%;
-    background-color: #E1D4C9;
-    border: 1px solid #E1D4C9;
+    background-color: #e1d4c9;
+    border: 1px solid #e1d4c9;
     height: calc(100vh - 4rem);
     display: flex;
     justify-content: center;
@@ -314,21 +305,20 @@
     margin: 0 auto;
   }
 
-  .menu__link  {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 1.5rem;
-      line-height: 125%;
-      color: #403F3D;
-    }
+  .menu__link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 125%;
+    color: #403f3d;
+  }
 
   body.menu-open {
     overflow: hidden;
     /* Отключает прокрутку страницы */
-}
+  }
 
   .header__menu-link {
-        display: none;
-      }
-
+    display: none;
+  }
 }
