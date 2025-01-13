@@ -11,24 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.toggle("menu-open");
     })
 
-    // next step - foreach each menu__link and add event listener  -  click
+    document.querySelectorAll('.menu__link').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetUrl = link.getAttribute('href');
 
-})
+            document.querySelector('.header').classList.remove('open');
+            document.body.classList.remove('menu-open');
 
-// steps to imlement a burger
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 300);
+        });
+      })
+    });
 
-// 1 check if the header has class list open or not  and remove it
 
-// 2. add event ;istene click for the burger button
 
-//3 because the menu is positioned -4 rem from the top down
-// so when we click on the burger btn firt we need to sroll the page up to the top 
-
-//4. toggle class open for the header
-
-//5. toggle class menu-open for the body  -  so the scroll of the page will be prevented 
-
-//6.  for each each menu__link, get href attribute,
-// remove class open from the header,
-// remove menu-open from the body to let the scroll going
-// 

@@ -285,6 +285,12 @@ table {
   font-size: 1em;
 }
 
+
+.hero__link {
+  text-decoration: none;
+}
+
+
 .hero__btn {
   margin-top: 6.25rem; /* 100px */
   width: 12.5rem;
