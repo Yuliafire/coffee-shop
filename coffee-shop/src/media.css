@@ -32,25 +32,7 @@
     color: #E1D4C9;
   }
 
-  .fav-coffee {
-    max-width: 1100px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0px 20px;
-  }
-
-  .fav-coffee__wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    max-width: 10rem;
-    margin: 0 auto;
-  }
+  
 
   .hero__text {
     max-width: 33rem;
@@ -148,66 +130,6 @@
   .hero__btn-img {
     display: block;
   }
-
-  /* fav-coffee start */
-  .fav-coffee {
-    max-width: 768px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0px 20px;
-  }
-
-  /* .fav-coffee__container {
-    max-width: 768px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  } */
-
-  .fav-coffee__slide-item.hidden {
-    display: none;
-  }
-
-  .fav-coffee__wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    max-width: 10rem;
-    margin: 0 auto;
-  }
-
-  .fav-coffee__slide-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .fav-coffee__title {
-    /* width: 688px; */
-    font-style: normal;
-    font-weight: 600;
-    font-size: 3.2rem;
-    line-height: 125%;
-    text-align: center;
-  }
-
-
-  .fav-coffee__item-descr {
-    width: 25rem;
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  /* fav-coffee end */
-
 
   .about {
     width: 100%;
@@ -459,15 +381,7 @@
     display: block;
   }
 
-  .fav-coffee {
-    max-width: 380px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0px;
-  }
+ 
 
   .menu {
     max-width: 380px;
@@ -541,74 +455,6 @@
 
   .menu__refresh {
     display: flex;
-  }
-
-
-
-  /* fav section */
-
-  .fav-coffee {
-    max-width: 380px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0px;
-  }
-
-  .fav-coffee__container {
-    max-width: 380px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .fav-coffee__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .fav-coffee__slide-item {
-    display: flex;
-    max-width: 380px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .fav-coffee__slide-item.hidden {
-    display: none;
-  }
-
-  .fav-coffee__title {
-    /* width: 348px; */
-    height: 80px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 125%;
-    text-align: center;
-  }
-
-  .fav-coffee__item-descr {
-    width: 348px;
-    height: 72px;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 150%;
-    text-align: center;
-    color: #403F3D;
-  }
-
-
-  .fav-coffee__arrow {
-    display: none;
   }
 
   .about {
