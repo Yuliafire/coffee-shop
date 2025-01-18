@@ -48,6 +48,27 @@
   /* identical to box height, or 24px */
   color: #403f3d;
   scroll-behavior: smooth;
+  position: relative;
+}
+
+.header__menu-link::after,
+.menu__link::after {
+  content: " ";
+  position: absolute;
+  height: 2px;
+  background-color: #403f3d;
+  width: 0;
+  opacity: 0.3;
+  right: 50%;
+  bottom: -4px;
+  transition: all 0.8s ease;
+}
+
+.header__menu-link:hover::after,
+.menu__link:hover::after {
+  right: 0;
+  width: 100%;
+  opacity: 1;
 }
 
 /* add hover for nav links  */
@@ -58,11 +79,9 @@
   gap: 0.625rem; /* 10px / 16 */
   text-decoration: none;
   color: #403f3d;
+  position: relative;
 }
 
-.header__menu-link:hover {
-  text-decoration: underline;
-}
 
 /* BURGER MENU STYLES */
 .burger-btn {
@@ -161,7 +180,27 @@
     font-size: 1.5rem;
     line-height: 125%;
     color: #403f3d;
+    position: relative;
   }
+
+ .menu__link::after {
+    content: " ";
+    position: absolute;
+    height: 2px;
+    background-color: #403f3d;
+    width: 0;
+    opacity: 0.3;
+    right: 50%;
+    bottom: -4px;
+    transition: all 0.8s ease;
+ }
+
+ .menu__link:hover::after {
+  right: 0;
+    width: 100%;
+    opacity: 1;
+ }
+
 
   body.menu-open {
     overflow: hidden;
