@@ -218,7 +218,7 @@ table {
   width: 100%;
   background-color: #e1d4c9;
   height: fit-content;
-  padding: 0 1.25rem; /* 20px */
+  padding: 0 1.25rem 30px; /* 20px */
   margin: 0 auto;
 }
 
@@ -229,13 +229,12 @@ table {
   margin: 0 auto;
 }
 
-.hero__img {
+.hero__video {
   width: calc(100vw - 2.5rem); /* 40px */
   height: 40rem; /* 640px */
-  border-radius: 3.125rem; /* 50px */
-  position: center center;
-  position: relative;
-  margin-bottom: 6.25rem; /* 100px */
+  border-radius: 40px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .hero__descr {
