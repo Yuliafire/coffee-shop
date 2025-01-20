@@ -382,6 +382,15 @@ table {
     margin: 0 auto;
     padding: 0px 20px;
   }
+
+  .slider__wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 480px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* position: relative; */
+  }
 }
 
 @media (max-width: 380px) {
@@ -393,6 +402,15 @@ table {
     align-items: center;
     margin: 0 auto;
     padding: 0px;
+  }
+
+  .slider__wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 380px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* position: relative; */
   }
 }
 
@@ -428,6 +446,12 @@ table {
 .slider__btn:hover svg rect,
 .slider__btn:hover svg path {
   stroke: #fff;
+}
+
+
+@media (max-width: 380px) {
+  .slider__btn {
+    display: none;
 }
 
 /* to make a hover for svg!!! */
@@ -508,6 +532,7 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 381px;
   }
 
   .slider__title {
@@ -519,7 +544,7 @@ span {
   }
 
   .slider__item-description {
-    width: 25rem;
+    /* max-width: 25rem; */
     font-size: 1rem;
     text-align: center;
   }
@@ -553,13 +578,13 @@ span {
   }
 }
 
-.slider__btns {
+/* .slider__btns {
   display: flex;
   justify-content: flex-end;
   gap: 17px;
   margin-left: auto;
   padding: 8px 83px 0;
-}
+} */
 
 /* ABOUT SECTION  start */
 .about {
