@@ -372,70 +372,6 @@ table {
   transition: transform 1s ease;
 }
 
-@media (min-width: 381px) and (max-width: 768px) {
-  .slider {
-    max-width: 768px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0px 20px;
-  }
-
-  .slider__wrapper {
-    display: flex;
-    flex-direction: row;
-    max-width: 480px;
-    margin: 0 auto;
-    overflow: hidden;
-    /* position: relative; */
-  }
-}
-
-@media (max-width: 380px) {
-  .slider {
-    max-width: 380px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0px;
-  }
-
-  .slider__wrapper {
-    display: flex;
-    flex-direction: row;
-    max-width: 380px;
-    margin: 0 auto;
-    overflow: hidden;
-    /* position: relative; */
-  }
-}
-
-@media (min-width: 381px) and (max-width: 768px) {
-  .slider__container {
-    max-width: 768px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 380px) {
-  .slider__container {
-    max-width: 380px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-}
-
 .slider__btn {
   background-color: transparent;
   outline: none;
@@ -448,13 +384,6 @@ table {
   stroke: #fff;
 }
 
-
-@media (max-width: 380px) {
-  .slider__btn {
-    display: none;
-}
-
-/* to make a hover for svg!!! */
 .slider__item {
   display: flex;
   flex-direction: column;
@@ -472,7 +401,7 @@ table {
   gap: 30px;
 }
 
- .slider__item-description {
+.slider__item-description {
   text-align: center;
 }
 
@@ -512,21 +441,35 @@ span {
   font-style: italic;
 }
 
-@media (min-width: 769px) and (max-width: 1100px) {
+@media (min-width: 381px) and (max-width: 768px) {
   .slider {
-    max-width: 1100px;
+    max-width: 768px;
     width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     padding: 0px 20px;
-    height: auto;
   }
-}
 
-@media (min-width: 381px) and (max-width: 768px) {
-  /* fav-coffee start */
+  .slider__container {
+    max-width: 768px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .slider__wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 480px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* position: relative; */
+  }
+
   .slider__item {
     display: flex;
     flex-direction: column;
@@ -551,6 +494,34 @@ span {
 }
 
 @media (max-width: 380px) {
+  .slider {
+    max-width: 380px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  .slider__container {
+    max-width: 380px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .slider__wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 380px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* position: relative; */
+  }
+
   .slider__item {
     display: flex;
     max-width: 380px;
@@ -576,15 +547,11 @@ span {
     text-align: center;
     color: #403f3d;
   }
-}
 
-/* .slider__btns {
-  display: flex;
-  justify-content: flex-end;
-  gap: 17px;
-  margin-left: auto;
-  padding: 8px 83px 0;
-} */
+  .slider__btn {
+    display: none;
+  }
+}
 
 /* ABOUT SECTION  start */
 .about {
@@ -613,8 +580,6 @@ span {
   font-size: 3.75rem;
   line-height: 125%;
   color: #403f3d;
-
-  /* width: 1360px; */
 }
 
 .about__title span {
@@ -808,8 +773,6 @@ span {
   width: 438px;
   height: 90px;
 }
-
-
 
 .modal__text {
   width: 380px;
