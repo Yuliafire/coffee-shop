@@ -1,233 +1,117 @@
-document.addEventListener('DOMContentLoaded', () => {
 
-    // buttons
-    const heroBtn = document.querySelector('.hero__btn');
-    const headerMenuBtn = document.getElementById('header-menu');
+// CAROUSEL
+// Set the width dynamically
 
-    //header links
-    const aboutLink  = document.getElementById('about');
-    const mobileAppLink = document.getElementById('mobile-app-link')
-    const coffeeLink = document.getElementById('fav-coffee-link');
-    const contactLink = document.getElementById('contact-link');
+const sliderTrack = document.querySelector(".slider__track");
+const slides = Array.from(document.querySelectorAll(".slider__item"));
+const progressBarLines = Array.from(
+  document.querySelectorAll(".progressbar__line"),
+);
+const prevBtn = document.querySelector(".slider__btn--left");
+const nextBtn = document.querySelector(".slider__btn--right");
+let currentIndex = 0;
+let intervalId; // interval timer
+const intervalDuration = 5000; // duration of auto-slide in ms
 
-    // sections
-    const menu = document.querySelector('.menu');
-    const hero = document.getElementById('hero');
-    const favCoffee = document.getElementById('favCoffee');
-    const about = document.getElementById('about');
-    const mobileApp = document.getElementById('mobile-app');
+// Set the width of the slider track dynamically based on number of slides
+const slideWidth = slides[0].offsetWidth; // Get the width of the first slide
+sliderTrack.style.width = `${slideWidth * slides.length}px`; // Set the width dynamically
 
-    //category buttons
-    const coffeeBtn = document.getElementById('coffee-btn');
-    const teaBtn = document.getElementById('tea-btn');
-    const dessertBtn = document.getElementById('dessert-btn');
+// Update the progress bar
+function updateProgressBar() {
+  progressBarLines.forEach((line, index) => {
+    line.classList.toggle("progressbar__line--active", index === currentIndex);
+  });
+}
 
-    //category groups
-    const menuDrinks = document.getElementById('menu-drinks');
-    const menuTea = document.getElementById('menu-tea');
-    const menuDesserts = document.getElementById('menu-desserts');
+// Move to a specific slide
+function moveToSlide(index) {
+  // Ensure the transform property is applied correctly
+  sliderTrack.style.transform = `translateX(-${index * slideWidth}px)`;
+  currentIndex = index;
+  updateProgressBar();
+}
 
-    const coffeeMenuFirstFlex = document.getElementById('coffee-drinks-first-line');
-    const coffeeMenuSecondFlex = document.getElementById('coffee-drinks-second-line');
+// Go to the next slide
+function nextSlide() {
+  moveToSlide((currentIndex + 1) % slides.length); // Loop back to the first slide
+}
 
-    const dessertMenuFirstFlex = document.getElementById('desserts-first-flex');
-    const dessertMenuSecondFlex = document.getElementById('desserts-second-flex');
+// Go to the previous slide
+function prevSlide() {
+  moveToSlide((currentIndex - 1 + slides.length) % slides.length); // Loop back to the last slide
+}
 
-    const coffeeRefreshBtn = document.getElementById('coffee-refresh-button');
-    const dessertsRefreshBtn = document.getElementById('desserts-refresh-button');
+// Stop auto slide when mouse enters the slider
+function stopAutoSlide() {
+  clearInterval(intervalId);
+}
 
-    headerMenuBtn.addEventListener('click', () => {
-        if(menu.style.display === 'none') {
-            menu.style.display = 'flex';
-            coffeeBtn.classList.add('active');
-            hero.style.display = "none";
-            favCoffee.style.display = "none";
-            mobileApp.style.display = "none";
-            about.style.display = "none";
-        } else {
-            menu.style.display = "none";
-        }
-    })
-    
-    heroBtn.addEventListener('click', () => {
-        if(menu.style.display === 'none') {
-            menu.style.display = 'flex';
-            coffeeBtn.classList.add('active');
-            hero.style.display = "none";
-            favCoffee.style.display = "none";
-            mobileApp.style.display = "none";
-            about.style.display = "none";
-        } else {
-           menu.style.display = "none";
-        }
-    });
+// Start auto slide
+function startAutoSlide() {
+  intervalId = setInterval(nextSlide, intervalDuration);
+}
 
-    coffeeBtn.addEventListener('click', () => {
-        coffeeBtn.classList.toggle('active');
-        teaBtn.classList.remove('active');
-        dessertBtn.classList.remove('active');
+// Event listeners to stop and start the auto slide
+sliderTrack.addEventListener("mouseenter", stopAutoSlide);
+sliderTrack.addEventListener("mouseleave", startAutoSlide);
 
-        menuDrinks.classList.remove('hidden');
-        menuTea.classList.add('hidden');
-        menuDesserts.classList.add('hidden');
-
-        // coffeeMenuFirstFlex.classList.add('drinks__line--hidden');
-        // coffeeMenuSecondFlex.classList.add('drinks__line--hidden');
-
-        dessertMenuFirstFlex.classList.add('drinks__line--hidden');
-        dessertMenuSecondFlex.classList.add('drinks__line--hidden');
-    })
-
-    teaBtn.addEventListener('click', () => {
-        teaBtn.classList.toggle('active');
-        coffeeBtn.classList.remove('active');
-        dessertBtn.classList.remove('active');
-        coffeeRefreshBtn.style.display =  'none';
-
-        menuDrinks.classList.add('hidden');
-        menuDesserts.classList.add('hidden');
-        menuTea.classList.remove('hidden');
-
-        dessertMenuFirstFlex.classList.add('drinks__line--hidden');
-        dessertMenuSecondFlex.classList.add('drinks__line--hidden');
-      });
-
-      dessertBtn.addEventListener('click', () => {
-        dessertBtn.classList.toggle('active');
-        coffeeBtn.classList.remove('active');
-        teaBtn.classList.remove('active');
-        coffeeRefreshBtn.style.display =  'none';
-
-        menuDrinks.classList.add('hidden');
-        menuTea.classList.add('hidden');
-        menuDesserts.classList.remove('hidden');
-
-        coffeeMenuFirstFlex.classList.add('drinks__line--hidden');
-        coffeeMenuSecondFlex.classList.add('drinks__line--hidden');
-     })
-
-     //  hidden menu 768px hidden menu
-
-    coffeeRefreshBtn.addEventListener('click', () => {
-        if(coffeeMenuFirstFlex.classList.contains('drinks__line--hidden')) {
-        coffeeMenuFirstFlex.classList.remove('drinks__line--hidden');
-        coffeeMenuSecondFlex.classList.add('drinks__line--hidden');
-        } else {
-            coffeeMenuFirstFlex.classList.add('drinks__line--hidden');
-            coffeeMenuSecondFlex.classList.remove('drinks__line--hidden');
-        }
-    });
-
-    dessertsRefreshBtn.addEventListener('click', () => {
-        if(dessertMenuFirstFlex.classList.contains('desserts__line--hidden')) {
-            dessertMenuFirstFlex.classList.remove('desserts__line--hidden');
-            dessertMenuSecondFlex.classList.add('desserts__line--hidden');
-        } else {
-            dessertMenuFirstFlex.classList.add('desserts__line--hidden');
-            dessertMenuSecondFlex.classList.remove('desserts__line--hidden');
-        }
-    });
-
-    //SLIDER
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.fav-coffee__slide-item');
-    const totalSlides = slides.length;
-    const sliderRightArrow = document.querySelector('.fav-coffee__arrow--left');
-    const sliderLeftArrow = document.querySelector('.fav-coffee__arrow--right');
-    const paginationLines = document.querySelectorAll('.fav-coffee__pagination-line');
-    function updatePagination() {
-        paginationLines.forEach((line, index) => {
-        if(index === currentSlide) {
-            line.classList.add('fav-coffee__pagination-line--active')
-        } else {
-            line.classList.remove('fav-coffee__pagination-line--active');
-        }
-     });
-    }
-    sliderRightArrow.addEventListener('click', () => {
-        slides[currentSlide].classList.remove('active-slide');
-        slides[currentSlide].classList.add('hidden');
-        currentSlide = (currentSlide + 1) % totalSlides;
-        slides[currentSlide].classList.remove('hidden');
-        slides[currentSlide].classList.add('active-slide');
-        updatePagination()
-      });
-    sliderLeftArrow.addEventListener('click', () => {
-        slides[currentSlide].classList.remove('.active-slide');
-        slides[currentSlide].classList.add('hidden');
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        slides[currentSlide].classList.remove('hidden');
-        slides[currentSlide].classList.add('.active-slide');
-        updatePagination()
-      });
-    updatePagination();
-
-    //BURGER MENU 768px
-    const burgerBtn = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav__menu');
-
-    document.addEventListener ('DOMContentLoaded', function() {
-    burgerBtn.addEventListener('click', () => {
-        burgerBtn.classList.toggle('hamburger--active');
-        navMenu.classList.toggle('active');
-        headerMenuBtn.classList.add('hidden');
-      });
-
-
-    document.querySelectorAll('.nav__link').forEach (link =>
-        link.addEventListener('click', () => {
-            burgerBtn.classList.remove('hamburger--active');
-            navMenu.classList.remove('active');
-        }));
-    });
-
-
-    //MODAL WINDOWS
-
-    const modals = document.querySelectorAll('.modal');
-    const menuItems = document.querySelectorAll('.menu__item');
-
-    menuItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
-            modals[index].classList.remove('modal--hidden');
-            document.body.style.overflow =  'hidden';
-            menu.classList.add('grayscale');
-            document.querySelector('.header').classList.add('grayscale');
-        })
-    })
-
-modals.forEach((modal) => {
-    const modalCloseBtn = modal.querySelector('.modal__btn');
-    modalCloseBtn.addEventListener('click',() => {
-        modal.classList.add('modal--hidden');
-        menu.classList.remove('grayscale');
-        document.querySelector('.header').classList.remove('grayscale');
-        document.body.style.overflow = 'visible';
-    });
+// Event listeners for navigation buttons
+prevBtn.addEventListener("click", () => {
+  prevSlide();
+  stopAutoSlide();
+  startAutoSlide();
 });
 
+nextBtn.addEventListener("click", () => {
+  nextSlide();
+  stopAutoSlide();
+  startAutoSlide();
+});
 
+// Touch event listeners for swiping
+let touchStartX = 0;
+let touchEndX = 0;
 
+sliderTrack.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  stopAutoSlide(); // Stop auto slide on touch start
+});
 
+sliderTrack.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  if (touchEndX < touchStartX) {
+    nextSlide(); // Next slide on swipe left
+  } else if (touchEndX > touchStartX) {
+    prevSlide(); // Previous slide on swipe right
+  }
+  startAutoSlide(); // Restart auto slide after touch end
+});
 
+// Start auto slide on page load
+startAutoSlide();
+updateProgressBar();
 
+//MODAL WINDOWS
 
+const modals = document.querySelectorAll(".modal");
+const menuItems = document.querySelectorAll(".menu__item");
 
+menuItems.forEach((item, index) => {
+  item.addEventListener("click", function () {
+    modals[index].classList.remove("modal--hidden");
+    document.body.style.overflow = "hidden";
+    menu.classList.add("grayscale");
+    document.querySelector(".header").classList.add("grayscale");
+  });
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+modals.forEach((modal) => {
+  const modalCloseBtn = modal.querySelector(".modal__btn");
+  modalCloseBtn.addEventListener("click", () => {
+    modal.classList.add("modal--hidden");
+    menu.classList.remove("grayscale");
+    document.querySelector(".header").classList.remove("grayscale");
+    document.body.style.overflow = "visible";
+  });
+});
