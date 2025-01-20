@@ -297,6 +297,7 @@ table {
   color: #403f3d;
   padding: 1.25rem 4.875rem; /* 20px 78px */
   cursor: pointer;
+  transition: background-color 0.3 ease;
 }
 
 .hero__btn:hover {
@@ -316,7 +317,7 @@ table {
 /* HERO SECTION END */
 
 /* FAVE COFFEE SECTION START */
-.fav-coffee {
+.slider {
   width: 100%;
   max-width: 1440px;
   height: auto;
@@ -328,7 +329,7 @@ table {
   background-color: #e1d4c9;
 }
 
-.fav-coffee__container {
+.slider__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -336,33 +337,43 @@ table {
   margin: 0 auto;
 }
 
-.fav-coffee__title {
+.slider__title {
   font-size: 3rem;
   color: #403f3d;
   text-align: center;
 }
 
-.fav-coffee__title span {
+.slider__title span {
   color: #b0907a;
 }
 
-.fav-coffee__slider-wrapper {
+.slider__box {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }
 
-.fav-coffee__slider {
+.slider__wrapper {
   display: flex;
   flex-direction: row;
+  width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  /* position: relative; */
 }
 
-.fav-coffee__slider-line {
+.slider__track {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 0;
+  transition: transform 1s ease;
 }
 
 @media (min-width: 381px) and (max-width: 768px) {
-  .fav-coffee {
+  .slider {
     max-width: 768px;
     width: 100%;
     flex-direction: column;
@@ -374,7 +385,7 @@ table {
 }
 
 @media (max-width: 380px) {
-  .fav-coffee {
+  .slider {
     max-width: 380px;
     width: 100%;
     flex-direction: column;
@@ -386,7 +397,7 @@ table {
 }
 
 @media (min-width: 381px) and (max-width: 768px) {
-  .fav-coffee__container {
+  .slider__container {
     max-width: 768px;
     width: 100%;
     flex-direction: column;
@@ -397,7 +408,7 @@ table {
 }
 
 @media (max-width: 380px) {
-  .fav-coffee__container {
+  .slider__container {
     max-width: 380px;
     width: 100%;
     flex-direction: column;
@@ -407,27 +418,29 @@ table {
   }
 }
 
-.fav-coffee__slider-btn {
+.slider__btn {
   background-color: transparent;
   outline: none;
   border: none;
   cursor: pointer;
 }
 
-.fav-coffee__slider-btn:hover svg rect,
-.fav-coffee__slider-btn:hover svg path {
+.slider__btn:hover svg rect,
+.slider__btn:hover svg path {
   stroke: #fff;
 }
 
 /* to make a hover for svg!!! */
-.fav-coffee__slider-item {
+.slider__item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
-.fav-coffee__item-textbox {
+.slider__item-textbox {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -435,17 +448,21 @@ table {
   gap: 30px;
 }
 
-.fav-coffee__item-description {
+ .slider__item-description {
   text-align: center;
 }
 
-.fav-coffee__item-price {
-  color: black;
-  font-size: 1.5rem;
-  justify-self: center;
+.slider__item-image {
+  height: 480px;
 }
 
-.fav-coffee__pagination {
+.slider__item-price {
+  color: black;
+  font-size: 1.5rem;
+  /* justify-self: center; */
+}
+
+.slider__progressbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -454,14 +471,14 @@ table {
   padding-top: 20px;
 }
 
-.fav-coffee__pagination-line {
+.progressbar__line {
   width: 30px;
   height: 1px;
   background-color: grey;
   border: 1px solid grey;
 }
 
-.fav-coffee__pagination-line--active {
+.progressbar__line--active {
   height: 3px;
   background-color: black;
 }
@@ -472,7 +489,7 @@ span {
 }
 
 @media (min-width: 769px) and (max-width: 1100px) {
-  .fav-coffee {
+  .slider {
     max-width: 1100px;
     width: 100%;
     flex-direction: column;
@@ -486,14 +503,14 @@ span {
 
 @media (min-width: 381px) and (max-width: 768px) {
   /* fav-coffee start */
-  .fav-coffee__slider-item {
+  .slider__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .fav-coffee__title {
+  .slider__title {
     font-style: normal;
     font-weight: 600;
     font-size: 3.2rem;
@@ -501,7 +518,7 @@ span {
     text-align: center;
   }
 
-  .fav-coffee__item-description {
+  .slider__item-description {
     width: 25rem;
     font-size: 1rem;
     text-align: center;
@@ -509,7 +526,7 @@ span {
 }
 
 @media (max-width: 380px) {
-  .fav-coffee__slider-item {
+  .slider__item {
     display: flex;
     max-width: 380px;
     flex-direction: column;
@@ -517,7 +534,7 @@ span {
     justify-content: center;
   }
 
-  .fav-coffee__title {
+  .slider__title {
     height: 80px;
     font-style: normal;
     font-weight: 600;
@@ -526,7 +543,7 @@ span {
     text-align: center;
   }
 
-  .fav-coffee__item-description {
+  .slider__item-description {
     height: 72px;
     font-weight: 400;
     font-size: 1rem;
@@ -534,6 +551,14 @@ span {
     text-align: center;
     color: #403f3d;
   }
+}
+
+.slider__btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 17px;
+  margin-left: auto;
+  padding: 8px 83px 0;
 }
 
 /* ABOUT SECTION  start */
@@ -759,8 +784,7 @@ span {
   height: 90px;
 }
 
-.modal__title {
-}
+
 
 .modal__text {
   width: 380px;
