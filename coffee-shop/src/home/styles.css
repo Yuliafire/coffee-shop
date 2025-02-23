@@ -257,7 +257,7 @@ table {
   position: absolute;
   left: 6.25rem;
   top: 7.5rem;
-  width: 33.13rem;
+  max-width: 33.13rem;
   height: 27.75rem;
   color: var(--text-color);
 }
@@ -266,13 +266,13 @@ table {
   font-size: 4rem;
   line-height: 105%;
   font-weight: 600;
-  width: 33rem;
+  /* width: 33rem; */
   height: 27.75rem;
   padding-bottom: 1.875rem;
 }
 
 .hero__text {
-  width: 33rem;
+  /* width: 33rem; */
   color: var(--text-color);
   font-size: 1em;
 }
@@ -331,7 +331,8 @@ table {
   .hero__descr {
     left: 2.25rem;
     top: 4rem;
-    min-width: 16rem;
+    max-width: 80%;
+    /* min-width: 16rem; */
     margin: 0 auto;
   }
 
@@ -343,9 +344,9 @@ table {
     padding-bottom: 1.875rem;
   }
 
-  .hero__text {
+  /* .hero__text {
     min-width: 16rem;
-  }
+  } */
 }
 
 @media (max-width: 23.75rem) {
@@ -375,12 +376,13 @@ table {
   .hero__descr {
     left: 3.25rem;
     top: 3rem;
-    max-width: 16rem;
+    max-width: 80%;
+    /* max-width: 16rem; */
   }
 
-  .hero__text {
+   /* .hero__text {
     max-width: 16rem;
-  }
+  } */
 }
 
 /* HERO SECTION END */
@@ -471,6 +473,7 @@ table {
 
 .slider__item-description {
   text-align: center;
+  max-width: 85%;
 }
 
 .slider__item-image {
@@ -559,7 +562,9 @@ span {
     /* max-width: 25rem; */
     font-size: 1rem;
     text-align: center;
+    max-width: 85%;
   }
+
 }
 
 @media (max-width: 380px) {
@@ -711,6 +716,7 @@ span {
     padding: 0px 20px;
     gap: 40px;
     max-width: var(--medium-width);
+    width: 100%;
     height: auto;
     padding-top: 40px;
   }
@@ -823,7 +829,7 @@ span {
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  padding: 70px;
+  padding-top: 70px;
 }
 
 .mobile-app__leftbx {
@@ -852,6 +858,7 @@ span {
   flex-direction: row;
   gap: 20px;
   align-self: flex-start;
+  flex-wrap: wrap;
 }
 
 .mobile-app__link:hover {
