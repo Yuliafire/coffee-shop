@@ -5,22 +5,19 @@
   --medium-width: 48rem;
   --mobile-width: 23.75rem;
   --bg-color: #e1d4c9;
-  --line-height: 105%;
-  --bold-font-weight: 600;
   --text-color: #e1d4c9;
-  --text-dark: #403f3d;
-  --link-bg-color: #403f3d;
   --header-bg-color: #e1d4c9;
-  --header-border: 1px solid #e1d4c9;
+  --title-span-color: #b0907a;
+  --footer-bg: #665f55;
 }
 
 .footer {
   display: flex;
-  max-width: 90rem;
+  max-width: var(--max-width);
   width: 100%;
   padding-top: 2.5rem;
   margin: 0 auto;
-  background-color: #e1d4c9;
+  background-color: var(--bg-color);
 }
 
 .footer__container {
@@ -32,7 +29,7 @@
   height: 28.125rem;
   margin: 0 auto;
   border: 0.0625rem solid grey;
-  background-color: #665f55;
+  background-color: var(--footer-bg);
   border-radius: 3.125rem;
   position: center center;
   text-align: left;
@@ -54,7 +51,7 @@
 }
 
 .footer__title {
-  color: #e1d4c9;
+  color: var(--header-bg-color);
   font-size: 1.5rem;
   margin-bottom: 1.875rem;
 }
@@ -76,13 +73,19 @@
   cursor: pointer;
 }
 
+.footer__social-icon:hover svg rect,
+.footer__social-icon:hover svg path {
+  stroke: #ffffff;
+  transition: stroke 0.3s ease;
+}
+
 .footer__greeting-title {
   font-size: 1.5rem;
-  color: #e1d4c9;
+  color: var(--text-color);
 }
 
 .footer__greeting-text {
-  color: #b0907a;
+  color: var(--title-span-color);
   font-style: italic;
   font-size: 4rem;
 }
@@ -91,11 +94,11 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  color: #e1d4c9;
+  color: var(--text-color);
 }
 
 .footer__greeting-title {
-  color: #e1d4c9;
+  color: var(--text-color);
   font-size: 4rem;
 }
 
@@ -112,7 +115,7 @@
 
 .footer__link-text {
   text-decoration: none;
-  color: #e1d4c9;
+  color: var(--text-color);
   font-style: normal;
 }
 
@@ -141,7 +144,7 @@
 @media (min-width: 501px) and (max-width: 768px) {
   .footer {
     width: 100%;
-    max-width: 768px;
+    max-width: var(--medium-width);
     padding: 90px 16px 30px;
     flex-direction: column;
   }
@@ -160,7 +163,6 @@
   .footer {
     width: 100%;
     max-width: 500px;
-    /* padding: 0px 40px 30px; */
     flex-direction: column;
     padding: 0px 16px;
   }
@@ -240,5 +242,11 @@
 
   .footer__social-icon:hover {
     cursor: pointer;
+  }
+
+  .footer__social-icon:hover svg rect,
+  .footer__social-icon:hover svg path {
+    stroke: #ffffff;
+    transition: stroke 0.3s ease;
   }
 }
