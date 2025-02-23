@@ -265,13 +265,11 @@ table {
   font-size: 4rem;
   line-height: 105%;
   font-weight: 600;
-  /* width: 33rem; */
   height: 27.75rem;
   padding-bottom: 1.875rem;
 }
 
 .hero__text {
-  /* width: 33rem; */
   color: var(--text-color);
   font-size: 1em;
 }
@@ -331,7 +329,6 @@ table {
     left: 2.25rem;
     top: 4rem;
     max-width: 80%;
-    /* min-width: 16rem; */
     margin: 0 auto;
   }
 
@@ -339,13 +336,8 @@ table {
     font-size: 3rem;
     line-height: 105%;
     font-weight: 600;
-    /* min-width: 16rem; */
     padding-bottom: 1.875rem;
   }
-
-  /* .hero__text {
-    min-width: 16rem;
-  } */
 }
 
 @media (max-width: 23.75rem) {
@@ -364,7 +356,6 @@ table {
     align-items: center;
   }
 
-
   .hero__title {
     font-family: "Inter";
     font-weight: 600;
@@ -376,12 +367,7 @@ table {
     left: 3.25rem;
     top: 3rem;
     max-width: 80%;
-    /* max-width: 16rem; */
   }
-
-   /* .hero__text {
-    max-width: 16rem;
-  } */
 }
 
 /* HERO SECTION END */
@@ -392,7 +378,7 @@ table {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 90rem;
+  max-width: var(--max-width);
   height: auto;
   padding: 80px 40px 0px;
   margin: 0 auto;
@@ -446,6 +432,7 @@ table {
   outline: none;
   border: none;
   cursor: pointer;
+  transition: all ease 0.5s;
 }
 
 .slider__btn:hover svg rect,
@@ -512,7 +499,7 @@ span {
 
 @media (min-width: 381px) and (max-width: 768px) {
   .slider {
-    max-width: 48rem;
+    max-width: var(--medium-width);
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -523,7 +510,7 @@ span {
   }
 
   .slider__container {
-    max-width: 48rem;
+    max-width: var(--medium-width);
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -537,7 +524,6 @@ span {
     max-width: 30rem;
     margin: 0 auto;
     overflow: hidden;
-    /* position: relative; */
   }
 
   .slider__item {
@@ -558,17 +544,15 @@ span {
   }
 
   .slider__item-description {
-    /* max-width: 25rem; */
     font-size: 1rem;
     text-align: center;
     max-width: 85%;
   }
-
 }
 
 @media (max-width: 380px) {
   .slider {
-    max-width: 23.75rem;
+    max-width: var(--mobile-width);
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -582,7 +566,7 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 23.75rem;
+    max-width: var(--mobile-width);
     width: 100%;
     margin: 0 auto;
   }
@@ -590,7 +574,7 @@ span {
   .slider__wrapper {
     display: flex;
     flex-direction: row;
-    max-width: 23.75rem;
+    max-width: var(--mobile-width);
     margin: 0 auto;
     overflow: hidden;
   }
@@ -700,11 +684,7 @@ span {
   align-self: end;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .about-image:hover img {
-    transform: scale(1);
-  }
-}
+
 
 @media (min-width: 381px) and (max-width: 768px) {
   .about {
@@ -859,6 +839,7 @@ span {
   flex-wrap: wrap;
 }
 
+
 .mobile-app__link:hover {
   cursor: pointer;
 }
@@ -868,7 +849,6 @@ span {
   width: 100%;
   max-height: 39.38rem;
   height: 100%;
-  /* align-self: flex-start; */
 }
 
 .mobile-app__link-text--available {
@@ -924,6 +904,50 @@ span {
   .mobile-app__rightbx {
     width: 100%;
     height: 100%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-secondary:hover {
+    background: var(--brown-background);
+    border-radius: 100px;
+  }
+  .button-app-store:hover {
+    background: var(--brown-background);
+    border-radius: 100px;
+    color: var(--text-color);
+  }
+
+  .button-google-play:hover {
+    background: var(--brown-background);
+    border-radius: 100px;
+    color: var(--text-color);
+  }
+
+  .tab-button:hover {
+    background: var(--brown-background);
+  }
+
+  .button--primary:hover::after {
+    opacity: 1;
+  }
+
+  .button-app-store:hover .mobile-app__link-text {
+    color: white;
+    color: var(--text-color);
+  }
+
+  .slider__btn:hover svg rect,
+  .slider__btn:hover svg path {
+    stroke: #fff;
+  }
+
+  .about-image:hover img {
+    transform: scale(1);
+  }
+
+  .mobile-app__link:hover {
+    cursor: pointer;
   }
 }
 

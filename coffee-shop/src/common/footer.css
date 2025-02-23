@@ -14,7 +14,6 @@
   --header-border: 1px solid #e1d4c9;
 }
 
-
 .footer {
   display: flex;
   max-width: 90rem;
@@ -157,7 +156,7 @@
   }
 }
 
-@media (min-width: 381px)  and (max-width: 500px) {
+@media (min-width: 381px) and (max-width: 500px) {
   .footer {
     width: 100%;
     max-width: 500px;
@@ -196,7 +195,7 @@
   }
 }
 
-@media (max-width: 380px)  {
+@media (max-width: 380px) {
   .footer {
     width: 100%;
     max-width: var(--mobile-width);
@@ -234,6 +233,12 @@
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .footer__link:hover {
+    cursor: pointer;
+  }
 
-
-
+  .footer__social-icon:hover {
+    cursor: pointer;
+  }
+}

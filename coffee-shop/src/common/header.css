@@ -46,10 +46,10 @@ html {
   word-wrap: none;
 }
 
-.menu__item:hover {
+/* .menu__item:hover {
   font-weight: bold;
   cursor: pointer;
-}
+} */
 
 .menu__link {
   text-decoration: none;
@@ -313,5 +313,12 @@ html {
 
   .header__menu-link {
     display: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .menu__item:hover {
+    font-weight: bold;
+    cursor: pointer;
   }
 }
