@@ -128,7 +128,7 @@
   .footer {
     width: 100%;
     max-width: 768px;
-    padding: 0px 40px 30px;
+    padding: 90px 40px 30px;
     flex-direction: column;
   }
 
@@ -142,21 +142,22 @@
   }
 }
 
-@media  (max-width: 380px) {
+@media (max-width: 380px) {
   .footer {
     width: 100%;
     max-width: 380px;
-    padding: 0px 40px 30px;
+    /* padding: 0px 40px 30px; */
     flex-direction: column;
+    padding: 0px 16px;
   }
 
   .footer__container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 20px;
-    padding: 40px;
     height: auto;
+    padding: 60px 16px;
+    gap: 40px;
   }
 
   .footer__greeting {
@@ -179,9 +180,6 @@
     max-width: 204px;
   }
 }
-
-
-
 
 /* fix  */
 /* @media (min-width: 769px) and (max-width: 1100px) {

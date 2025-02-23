@@ -96,11 +96,18 @@ table {
   --max-width: 90rem;
   --medium-width: 48rem;
   --mobile-width: 23.75rem;
-  --hero-bg-color: #e1d4c9;
+  --bg-color: #e1d4c9;
   --hero-title-font-size: 4rem;
   --line-height: 105%;
   --bold-font-weight: 600;
   --text-color: #e1d4c9;
+  --border: 1px solid #665f55;
+  --brown-background: #665f55;
+  --text-dark: #403f3d;
+  --brown-border: 1px solid #665f55;
+  --light-border: 1px solid #c1b6ad;
+  --title-span-color: #b0907a;
+  --btn-transition: all ease 0.3s;
 }
 
 /* BUTTONS */
@@ -116,6 +123,7 @@ table {
   background: var(--hero-bg-color);
   border-radius: 100px;
   position: relative;
+  transition: var(--btn-transition);
 }
 
 .button--primary::after {
@@ -142,12 +150,12 @@ table {
   gap: 0.5rem;
   width: 12.5rem;
   height: 2.75rem;
-  border: 1px solid #665f55;
+  border: var(--border);
   border-radius: 100px;
 }
 
 .button-secondary:hover {
-  background: #665f55;
+  background: var(--brown-background);
   border-radius: 100px;
 }
 
@@ -160,19 +168,19 @@ table {
   gap: 0.5rem;
   width: 12.5rem;
   height: 4rem;
-  border: 1px solid #665f55;
+  border: var(--brown-border);
   border-radius: 100px;
+  transition: var(--btn-transition);
 }
 
 .button-app-store:hover {
-  background: #665f55;
+  background: var(--brown-background);
   border-radius: 100px;
   color: var(--text-color);
 }
 
 .button-app-store:hover .mobile-app__link-text {
   color: white;
-  /* App Store */
   color: var(--text-color);
 }
 
@@ -185,12 +193,13 @@ table {
   gap: 0.5rem;
   width: 12.5rem;
   height: 4rem;
-  border: 1px solid #665f55;
+  border: var(--border);
   border-radius: 100px;
+  transition: var(--btn-transition);
 }
 
 .button-google-play:hover {
-  background: #665f55;
+  background: var(--brown-background);
   border-radius: 100px;
   color: var(--text-color);
 }
@@ -204,13 +213,13 @@ table {
   gap: 0.5rem;
   width: 7.1875rem;
   height: 2.875rem;
-  border: 1px solid #c1b6ad;
+  border: var(--light-border);
   border-radius: 100px;
 }
 
 .tab-button:hover,
 .tab-button.active {
-  background: #665f55;
+  background: var(--brown-background);
 }
 
 /* HERO SECTION START */
@@ -221,7 +230,7 @@ table {
   max-width: var(--max-width);
   width: 100%;
   height: auto;
-  background-color: var(--hero-bg-color);
+  background-color: var(--bg-color);
   padding: 0 1.25rem 1.875rem;
   margin: 0 auto;
 }
@@ -264,12 +273,12 @@ table {
 
 .hero__text {
   width: 33rem;
-   color: var(--text-color);
+  color: var(--text-color);
   font-size: 1em;
 }
 
 .hero__title span {
-  color: #b0907a;
+  color: var(--title-span-color);
 }
 
 .hero__link {
@@ -282,8 +291,8 @@ table {
   height: 4rem;
   border-radius: 100px;
   border: #000000;
-  background: var(--hero-bg-color);
-  color: #403f3d;
+  background: var(--bg-color);
+  color: var(--text-dark);
   padding: 1.25rem 4.875rem;
   cursor: pointer;
   transition: background-color 0.3 ease;
@@ -299,11 +308,9 @@ table {
 }
 
 .hero__btn-text {
-  color: #403f3d;
+  color: var(--text-dark);
   font-style: normal;
 }
-
-
 
 @media (min-width: 381px) and (max-width: 768px) {
   .hero {
@@ -312,7 +319,7 @@ table {
     align-items: center;
     padding: 0px 40px;
     width: 100%;
-    max-width: 768px;
+    max-width: var(--medium-width);
     height: auto;
   }
 
@@ -344,16 +351,13 @@ table {
 }
 
 @media (max-width: 23.75rem) {
-
   .hero {
     width: 100%;
     max-width: 380px;
   }
 
   .hero__title {
-    /* width: 316px; */
     font-family: "Inter";
-    /* font-style: italic; */
     font-weight: 600;
     font-size: 42px !important;
     line-height: 115%;
@@ -370,21 +374,19 @@ table {
   }
 }
 
-
 /* HERO SECTION END */
 
 /* FAVE COFFEE SECTION START */
 .slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 90rem;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 40px;
-  align-items: center;
+  padding: 80px 40px 0px;
   margin: 0 auto;
-  background-color: #e1d4c9;
-  padding-top: 80px;
+  background-color: var(--bg-color);
 }
 
 .slider__container {
@@ -397,12 +399,12 @@ table {
 
 .slider__title {
   font-size: 3rem;
-  color: #403f3d;
+  color: var(--text-dark);
   text-align: center;
 }
 
 .slider__title span {
-  color: #b0907a;
+  color: var(--title-span-color);
 }
 
 .slider__box {
@@ -416,7 +418,6 @@ table {
   max-width: 30rem;
   margin: 0 auto;
   overflow: hidden;
-  /* position: relative; */
 }
 
 .slider__track {
@@ -470,7 +471,6 @@ table {
 .slider__item-price {
   color: black;
   font-size: 1.5rem;
-  /* justify-self: center; */
 }
 
 .slider__progressbar {
@@ -495,7 +495,7 @@ table {
 }
 
 span {
-  color: #b0907a;
+  color: var(--title-span-color);
   font-style: italic;
 }
 
@@ -606,7 +606,7 @@ span {
     font-size: 1rem;
     line-height: 150%;
     text-align: center;
-    color: #403f3d;
+    color: var(--text-dark);
   }
 
   .slider__btn {
@@ -618,20 +618,19 @@ span {
 .about {
   display: flex;
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--max-width);
   height: auto;
-  background-color: #e1d4c9;
+  background-color: var(--bg-color);
   padding: 40px;
   margin: 0 auto;
-  padding-top: 40px;
 }
 
 .about__container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  padding-top: 80px;
   gap: 10px;
-  /* margin: 0 auto; */
 }
 
 .about__title {
@@ -641,7 +640,7 @@ span {
   font-weight: 600;
   font-size: 3.75rem;
   line-height: 125%;
-  color: #403f3d;
+  color: var(--text-dark);
 }
 
 .about__title span {
@@ -702,7 +701,7 @@ span {
     align-items: center;
     padding: 0px 20px;
     gap: 40px;
-    max-width: 768px;
+    max-width: var(--medium-width);
     height: auto;
     padding-top: 40px;
   }
@@ -738,7 +737,7 @@ span {
     font-weight: 600;
     font-size: 60px;
     line-height: 125%;
-    color: #403f3d;
+    color: var(--text-dark);
   }
 }
 
@@ -749,7 +748,7 @@ span {
     align-items: center;
     padding: 0px 16px;
     gap: 40px;
-    max-width: 380px;
+    max-width: var(--mobile-width);
     height: auto;
     padding-top: 40px;
   }
@@ -797,10 +796,15 @@ span {
 .mobile-app {
   display: flex;
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--max-width);
   height: auto;
-  background-color: #e1d4c9;
+  background-color: var(--bg-color);
   margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 100px;
 }
 
 .mobile-app__container {
@@ -808,33 +812,35 @@ span {
   justify-content: space-around;
   width: 100%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 70px;
 }
 
 .mobile-app__leftbx {
   display: flex;
   flex-direction: column;
+  align-items: felx-start;
+  justify-content: flex-start;
   gap: 40px;
 }
 
 .mobile-app__title {
   font-size: 3rem;
-  color: #403f3d;
-  margin-top: 130px;
+  color: var(--text-dark);
 }
 
 .mobile-app__title span {
-  color: #b0907a;
+  color: var(--title-span-color);
 }
 
 .mobile-app__text {
-  color: #403f3d;
+  color: var(--text-dark);
 }
 
 .mobile-app__applinks {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  align-self: flex-start;
 }
 
 .mobile-app__link:hover {
@@ -849,7 +855,7 @@ span {
 }
 
 .mobile-app__link-text--available {
-  color: #403f3d;
+  color: var(--text-dark);
   font-style: normal;
 }
 
@@ -857,12 +863,12 @@ span {
 
 @media (min-width: 381px) and (max-width: 768px) {
   .mobile-app {
-    max-width: 768px;
+    max-width: var(--medium-width);
     width: 100%;
   }
 
   .mobile-app__container {
-    max-width: 768px;
+    max-width: var(--medium-width);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -871,7 +877,6 @@ span {
   .mobile-app__rightbx {
     width: 100%;
     height: 100%;
-
     max-width: 630px;
     max-height: 630px;
   }
@@ -879,12 +884,13 @@ span {
 
 @media (max-width: 380px) {
   .mobile-app {
-    max-width: 380px;
+    max-width: var(--mobile-width);
     width: 100%;
+    padding-top: 0px;
   }
 
   .mobile-app__container {
-    max-width: 380px;
+    max-width: var(--mobile-width);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -915,7 +921,7 @@ span {
   position: relative;
   width: 800px;
   height: 504px;
-  background: #e1d4c9;
+  background: var(--bg-color);
   border-radius: 40px;
   position: fixed;
   top: 50%;
