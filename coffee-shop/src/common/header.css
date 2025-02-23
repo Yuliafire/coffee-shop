@@ -1,12 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --max-width: 90rem;
+  --medium-width: 48rem;
+  --mobile-width: 23.75rem;
+  --bg-color: #e1d4c9;
+  --line-height: 105%;
+  --bold-font-weight: 600;
+  --text-color: #e1d4c9;
+  --text-dark: #403f3d;
+  --link-bg-color: #403f3d;
+  --header-bg-color: #e1d4c9;
+  --header-border: 1px solid #e1d4c9;
+}
+
 .header {
-  max-width: 90rem; /* 1440px / 16 */
+  max-width: var(--max-width);
   width: 100%;
-  background-color: #e1d4c9;
-  height: 6.25rem; /* 100px / 16 */
+  background-color: var(--bg-color);
+  height: 6.25rem;
   display: flex;
-  padding: 2.5rem; /* 40px / 16 */
+  padding: 2.5rem;
   margin: 0 auto;
 }
 
@@ -17,12 +35,6 @@
   position: relative;
   width: 100%;
 }
-
-/* .header__navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .menu__list {
   display: flex;
@@ -45,8 +57,7 @@
   font-weight: 600;
   font-size: 1rem;
   line-height: 150%;
-  /* identical to box height, or 24px */
-  color: #403f3d;
+  color: var(--text-dark);
   scroll-behavior: smooth;
   position: relative;
 }
@@ -56,7 +67,7 @@
   content: " ";
   position: absolute;
   height: 2px;
-  background-color: #403f3d;
+  background-color: var(--link-bg-color);
   width: 0;
   opacity: 0.3;
   right: 50%;
@@ -71,17 +82,14 @@
   opacity: 1;
 }
 
-/* add hover for nav links  */
-
 .header__menu-link {
   display: flex;
   align-items: center;
-  gap: 0.625rem; /* 10px / 16 */
+  gap: 0.625rem;
   text-decoration: none;
-  color: #403f3d;
+  color: var(--text-dark);
   position: relative;
 }
-
 
 /* BURGER MENU STYLES */
 .burger-btn {
@@ -90,16 +98,11 @@
   background-color: transparent;
   width: 40px;
   height: 40px;
-  right: 0px; /* 10px / 16 */
-  /* top: -0.625rem;  */
+  right: 0px;
   outline: none;
   border: none;
   cursor: pointer;
-  /* border: 1px solid black;
-  border-radius: 50%; */
 }
-/* BURGER MENU STYLES */
-
 .burger-btn .line {
   display: block;
   position: absolute;
@@ -107,16 +110,15 @@
   height: 2px;
   background-color: black;
   left: 10px;
+  transition: transform 0.5s ease;
 }
 
 .burger-btn .line:nth-child(1) {
   transform: translateY(4px);
-  transition: transform 0.3s ease;
 }
 
 .burger-btn .line:nth-child(2) {
   transform: translateY(-4px);
-  transition: transform 0.3s ease;
 }
 
 /* make a cross */
@@ -144,6 +146,9 @@
   }
 
   .header__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     visibility: hidden;
     right: -100%;
@@ -151,12 +156,9 @@
     z-index: 2000;
     max-width: 56.25rem;
     width: 100%;
-    background-color: #e1d4c9;
-    border: 1px solid #e1d4c9;
+    background-color: var(--header-bg-color);
+    border: var(--header-border);
     height: calc(100vh - 4rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: transform 0.5s ease, visibility 0.5s ease;
   }
 
@@ -175,32 +177,10 @@
   }
 
   .menu__link {
-    font-style: normal;
-    font-weight: 600;
     font-size: 1.5rem;
     line-height: 125%;
-    color: #403f3d;
     position: relative;
   }
-
- .menu__link::after {
-    content: " ";
-    position: absolute;
-    height: 2px;
-    background-color: #403f3d;
-    width: 0;
-    opacity: 0.3;
-    right: 50%;
-    bottom: -4px;
-    transition: all 0.8s ease;
- }
-
- .menu__link:hover::after {
-  right: 0;
-    width: 100%;
-    opacity: 1;
- }
-
 
   body.menu-open {
     overflow: hidden;
@@ -209,21 +189,12 @@
 
   .header__menu-link {
     display: none;
-  }
-
-  .burger-btn .line:nth-child(1) {
-    transform: translateY(4px);
-    transition: transform 0.3s ease;
-  }
-  .burger-btn .line:nth-child(2) {
-    transform: translateY(-4px);
-    transition: transform 0.3s ease;
   }
 }
 
 @media (min-width: 381px) and (max-width: 768px) {
   .header {
-    max-width: 48rem;
+    max-width: var(--medium-width);
     width: 100%;
     margin: 0 auto;
   }
@@ -237,19 +208,19 @@
   }
 
   .header__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     visibility: hidden;
     right: -100%;
     top: 4rem;
     z-index: 2000;
-    max-width: 48rem;
+    max-width: var(--medium-width);
     width: 100%;
-    background-color: #e1d4c9;
-    border: 1px solid #e1d4c9;
+    background-color: var(--header-bg-color);
+    border: var(--header-border);
     height: calc(100vh - 4rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: transform 0.5s ease, visibility 0.5s ease;
   }
 
@@ -268,11 +239,8 @@
   }
 
   .menu__link {
-    font-style: normal;
-    font-weight: 600;
     font-size: 1.5rem;
     line-height: 125%;
-    color: #403f3d;
   }
 
   body.menu-open {
@@ -283,26 +251,15 @@
   .header__menu-link {
     display: none;
   }
-
-  .burger-btn .line:nth-child(1) {
-    transform: translateY(4px);
-    transition: transform 0.3s ease;
-  }
-
-  .burger-btn .line:nth-child(2) {
-    transform: translateY(-4px);
-    transition: transform 0.3s ease;
-  }
 }
 
 @media (max-width: 380px) {
   .header {
-    max-width: 23.75rem;
+    max-width: var(--mobile-width);
     /* 380px */
     width: 100%;
     height: 64px;
     margin: 0 auto;
-    /* padding: 0px 8px; */
   }
 
   .header__container {
@@ -314,19 +271,19 @@
   }
 
   .header__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     visibility: hidden;
     right: -100%;
     top: 4rem;
     z-index: 2000;
-    max-width: 23.75rem;
+    max-width: var(--mobile-width);
     width: 100%;
-    background-color: #e1d4c9;
-    border: 1px solid #e1d4c9;
+    background-color: var(--header-bg-color);
+    border: var(--header-border);
     height: calc(100vh - 4rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: transform 0.5s ease, visibility 0.5s ease;
   }
 
@@ -345,11 +302,8 @@
   }
 
   .menu__link {
-    font-style: normal;
-    font-weight: 600;
     font-size: 1.5rem;
     line-height: 125%;
-    color: #403f3d;
   }
 
   body.menu-open {
