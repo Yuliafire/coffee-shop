@@ -597,7 +597,6 @@ span {
 
   .slider__item {
     display: flex;
-    /* max-width: 23.75rem; */
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -749,7 +748,8 @@ span {
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;
-    font-size: 60px;
+    font-size: 42px;
+    text-align: center;
     line-height: 125%;
     color: var(--text-dark);
   }
@@ -796,14 +796,13 @@ span {
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 32px !important;
     line-height: 125%;
-    color: grey;
     text-align: left;
   }
 }
 
-/* ABOUT SECTION  end*/
+/* ABOUT SECTION  end */
 
 /* MOBILE APP SECTION start */
 
