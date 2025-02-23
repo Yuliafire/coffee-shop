@@ -317,7 +317,6 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 40px;
     width: 100%;
     max-width: var(--medium-width);
     height: auto;
@@ -327,11 +326,10 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 40px;
   }
 
   .hero__descr {
-    left: 4.25rem;
+    left: 2.25rem;
     top: 4rem;
     min-width: 16rem;
     margin: 0 auto;
@@ -341,7 +339,7 @@ table {
     font-size: 3rem;
     line-height: 105%;
     font-weight: 600;
-    min-width: 16rem;
+    /* min-width: 16rem; */
     padding-bottom: 1.875rem;
   }
 
@@ -352,9 +350,20 @@ table {
 
 @media (max-width: 23.75rem) {
   .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 380px;
+    height: auto;
+    max-width: var(--mobile-width);
   }
+
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 
   .hero__title {
     font-family: "Inter";
@@ -820,7 +829,7 @@ span {
 .mobile-app__leftbx {
   display: flex;
   flex-direction: column;
-  align-items: felx-start;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 40px;
 }
@@ -868,12 +877,15 @@ span {
   .mobile-app {
     max-width: var(--medium-width);
     width: 100%;
+    margin: 0 auto;
   }
 
   .mobile-app__container {
     max-width: var(--medium-width);
+    width: 100%;
+    margin: 0 auto;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
@@ -895,7 +907,7 @@ span {
   .mobile-app__container {
     max-width: var(--mobile-width);
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
