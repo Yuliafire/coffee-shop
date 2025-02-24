@@ -91,7 +91,7 @@ sliderTrack.addEventListener("touchstart", (e) => {
 sliderTrack.addEventListener("touchend", (e) => {
   if (!isSwiping) return; // If it's not a swipe action, do nothing
   touchEndX = e.changedTouches[0].screenX;
-  
+
   if (touchEndX < touchStartX) {
     nextSlide(); // Next slide on swipe left
   } else if (touchEndX > touchStartX) {
