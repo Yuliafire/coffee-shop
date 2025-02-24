@@ -1,11 +1,11 @@
 /* HIDDEN MENU START */
 .menu {
     display: flex;
-    max-width: 90rem; /* 1440px */
+    max-width: 90rem;
     width: 100%;
     height: auto;
     background-color: #E1D4C9;
-    padding: 1.25rem 0.625rem; /* 20px 10px */
+    padding: 1.25rem 0.625rem;
     margin: 0 auto;
 }
 
@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1.25rem; /* 20px */
+    gap: 1.25rem;
     margin: 0 auto;
 }
 
@@ -32,11 +32,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 2.5rem; /* 40px */
+    gap: 2.5rem;
 }
 
 .fav-coffee__pagination-line--active {
-    height: 0.1875rem; /* 3px */
+    height: 0.1875rem; 
     background-color: black;
 }
 

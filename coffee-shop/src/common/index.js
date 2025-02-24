@@ -24,4 +24,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 300);
     });
   });
+
+
+  //UP BUTTON
+
+
+	const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	function handleScroll() {
+		if (window.innerWidth <= 768) {
+			if (window.scrollY > 300) {
+				scrollToTopBtn.style.display = "block";
+			} else {
+				scrollToTopBtn.style.display = "none";
+			}
+		} else {
+			scrollToTopBtn.style.display = "none";
+		}
+	}
+
+	window.addEventListener("scroll", handleScroll);
+	window.addEventListener("resize", handleScroll); // Обработчик для изменения размера окна
+
+	scrollToTopBtn.addEventListener("click", function () {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	});
+	handleScroll();
 });
+
+

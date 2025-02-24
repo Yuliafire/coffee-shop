@@ -111,6 +111,39 @@ table {
 
 /* BUTTONS */
 
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  /* border-radius: 50%; */
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  background: #FFFFFF;
+  border: 1px solid var(--brown-border);
+  /* border-radius: 100px; */
+  border-radius: 40px;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+      display: block;
+      /* Отображается только при ширине экрана 768px и меньше */
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+      display: block;
+      /* Отображается только при ширине экрана 768px и меньше */
+  }
+}
+
 .button--primary {
   display: flex;
   justify-content: center;
@@ -421,6 +454,7 @@ table {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  max-width: 90rem;
   height: auto;
   position: relative;
   left: 0;
@@ -445,6 +479,8 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* flex: 0 0 100%; */
+  /* width: 100%; */
   max-width: 30rem;
   margin: 0 auto;
 }
@@ -490,6 +526,7 @@ table {
 .progressbar__line--active {
   height: 3px;
   background-color: black;
+  animation: fillProgressBar 5s linear forwards;
 }
 
 span {
@@ -683,8 +720,6 @@ span {
   grid-area: 2/2/4/3;
   align-self: end;
 }
-
-
 
 @media (min-width: 381px) and (max-width: 768px) {
   .about {
